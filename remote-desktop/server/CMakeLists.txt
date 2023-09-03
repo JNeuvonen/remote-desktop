@@ -1,4 +1,5 @@
-project(server.bin)
+set(TARGET_NAME "server.bin")
+project(${TARGET_NAME})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,9 +10,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/build)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/build)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c" "src/*.h")
-add_executable(server.bin ${SOURCES})
-set_target_properties(server.bin PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+add_executable(${TARGET_NAME} ${SOURCES})
+set_target_properties(${TARGET_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 if(APPLE)
-    target_link_libraries(server.bin "-framework CoreGraphics" "-framework CoreFoundation")
+    target_link_libraries(${TARGET_NAME} "-framework CoreGraphics" "-framework CoreFoundation")
 endif()

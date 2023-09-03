@@ -16,7 +16,7 @@
     {
       "label": "run server",
       "type": "shell",
-      "command": "./server.bin",
+      "command": "build/server.bin",
       "args": [],
       "group": {
         "kind": "build",
@@ -27,7 +27,7 @@
     {
       "label": "run client",
       "type": "shell",
-      "command": "./client.bin",
+      "command": "build/client.bin",
       "args": [],
       "group": {
         "kind": "build",

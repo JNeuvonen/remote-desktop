@@ -27,7 +27,7 @@ void Screen::pollState()
 
 void Screen::writePixelsToFile(const std::string &filename) const
 {
-    std::ofstream outFile(filename, std::ios::binary);
+    std::ofstream outFile(filename + ".testfile", std::ios::binary);
 
     if (outFile.is_open())
     {

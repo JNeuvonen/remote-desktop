@@ -3,3 +3,4 @@ CMakeFiles
 *.bin
 *.cmake
 Makefile
+*.testfile
