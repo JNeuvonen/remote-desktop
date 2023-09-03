@@ -2,17 +2,42 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(gdb) Launch",
+      "name": "Server",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/project.bin", // Replace <your-program> with your actual program name
+      "program": "${workspaceFolder}/build/server.bin",
       "args": [],
       "stopAtEntry": false,
-      "preLaunchTask": "build",
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "osx": {
+        "MIMode": "lldb"
+      }
+    },
+    {
+      "name": "Client",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/client.bin",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "logging": {
+        "engineLogging": true,
+        "trace": true
+      },
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
