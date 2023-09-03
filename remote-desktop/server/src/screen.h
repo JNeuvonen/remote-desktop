@@ -5,6 +5,11 @@
 class Screen
 {
 public:
+    struct Dimensions
+    {
+        size_t width;
+        size_t height;
+    };
     const CGDirectDisplayID screenId;
 
     Screen(CGDirectDisplayID id)
@@ -15,9 +20,9 @@ public:
     void pollState();
     void writePixelsToFile(const std::string &filename) const;
     const std::vector<uint8_t> &getState();
+    Dimensions getDimensions();
 
 private:
     std::vector<uint8_t> pixels;
-    size_t height;
-    size_t width;
+    Dimensions dimensions;
 };
