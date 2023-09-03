@@ -35,5 +35,8 @@ void Manager::pollScreensFromOS()
     {
         screen.pollState();
         screen.writePixelsToFile(std::to_string(screen.screenId));
+        const auto dimensions = screen.getDimensions();
+
+        std::cout << dimensions.width << " " << dimensions.height << "\n";
     }
 };
